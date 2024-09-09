@@ -1,0 +1,131 @@
+<html>
+    <head>
+        <link rel="stylesheet" href="styles.css">
+        <title>Hello</title>
+        <style>
+            .testi:hover {
+                border-radius: 30px;
+            }
+            .testi {
+                text-align: center;
+                background-color: rgb(29, 29, 235);
+                border: 5px outset gold;
+                color: #ffffff;
+                padding: 10px;
+            }
+            .testi {
+                font-family: 'Courier New', Courier, monospace;
+            }
+            body {
+                background-color: deepskyblue;
+                text-align: center;
+                color: aqua;
+                font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+                font-size: 18px;
+                margin-bottom: 10%;
+                margin-top: 10%;
+                margin-left: 20%;
+                margin-right: 20%;
+                border: 3px dotted blue;
+                padding: 15px;
+            }
+            .varlet {
+                background-color: blueviolet;
+                margin: 5px;
+                border: 5px inset gold;
+            }
+        </style>
+        <script>
+            //vaihtaa moikkarallaa tekstin värin takas aquan väriseksi ja tekee siitä taas moikkarallaa tekstin:
+            function myFunction() {
+              document.getElementById("moi").innerHTML = "moikkarallaa.";
+              document.getElementById("moi").style.color = "aqua"; 
+             
+            }
+        </script>
+         <link rel="stylesheet" href="style.css"> 
+    </head>
+    <body>
+        <div class="ekaalue">
+        <h1 style="background-color: blue; border: 5px outset gold;">heipparallaa</h1>
+        <h3>pienempi otsikko</h3>
+        <p>kappale tekstiä</p>
+        <b>boldattu teksti</b>
+        <ol>
+            <li>asd</li>
+            <li>asd</li>
+            <li>asd</li>
+        </ol>
+        <ul>
+            <li>asd</li>
+            <li>asd</li>
+            <li>asd</li>
+        </ul>
+    </div>
+        <img src="https://cdn.pixabay.com/photo/2014/04/13/20/49/cat-323262_1280.jpg" alt="kissakuva" width="auto" height=" 300" style="border-radius: 30px;">
+        <p>tässä on kissakuva</p>
+        <a target="_blank"href="https://www.salpaus.fi">linkki salpauksen sivulle</a>
+        <form>
+        <label for="et">Etunimi</label>
+        <br /> 
+        <input id="et" type="text" value="">
+        <input type="submit" value="moikka">
+        </form>
+         <div class="testi">
+            <h2>moikka</h2>
+            <h3>lorem ipsum dolor sit amet</h3></div>
+        <button type="button" onclick='document.getElementById("moi").style.color = "red"'>vaihda väriä!</button>
+        <button type="button" onclick='document.getElementById("moi").innerHTML = "moi moi moikkarallaa hei sinulle"'>vaihda moikkarallaa tekstiä</button>
+        <button type="button" onclick="myFunction()">takas</button>
+        <h2 id="moi">moikkarallaa</h2>
+        <div class="varlet">
+        <h1>var, let ja const eroavaisuudet</h1>
+        <p>The var keyword was used in all JavaScript code from 1995 to 2015.The var keyword should only be used in code written for older browsers. Always use const if the value should not be changed, Always use const if the type should not be changed (Arrays and Objects).Only use let if you can't use const.Only use var if you MUST support old browsers.
+           ELI SIIS Var on vanha metodi kertoa variable. Let on uusi tapa kertoa variable.Const tekee variablen arvosta toistuvan ja sitä ei voi silloin muuttaa.</p>
+        </div>
+           <h1>JavaScript Comparison</h1>
+        <p id="demo"></p>
+        <script>
+           let x = 15;
+           if (x < 18 ) { document.getElementById("demo").innerHTML = "alaikäinen";}else{document.getElementById("demo").innerHTML = "täysi ikänen";} 
+        </script>
+        <h1>looppi jossa lukee huhuu</h1>
+        <p id="hehee"></p>
+        <script>
+            let text = "5 huhuu tekstiä";
+            let i = 0;
+            while (i < 5) {
+            text += "<br> huhuu";
+            i++;
+            }
+            document.getElementById("hehee").innerHTML = text;
+        </script>
+        <h1>For loop lista</h1>
+        <p id="horlop"></p>
+         <script>
+            const eläimet = ["koira ", "kissa ", "hevonen ", "hiiri ", "marsu "];
+            let o, len, tekstini;
+            for (o = 0, len = eläimet.length, tekstini = ""; o < len; o++) {
+            tekstini += eläimet[o] + "!" + "<br>" ;
+            }
+            document.getElementById("horlop").innerHTML = tekstini;
+        </script>
+        <form onsubmit="tulostanimi()">
+            <label for="fname">First name:</label><br>
+            <input type="text" id="fname" name="fname"><br>
+            <label for="lname">Last name:</label><br>
+            <input type="text" id="lname" name="lname">
+        </form>
+        <button onclick="tulostanimi()">tulosta</button>
+        <script>
+            function tulostanimi() {
+                const fname = document.getElementById("fname").value;
+                const lname = document.getElementById("lname").value;
+
+                document.getElementById("tuloste").innerHTML = nimituloste("hei" + fname + lname)
+            }
+            
+        </script>
+        <p id="tuloste"></p>
+    </body>
+</html>
